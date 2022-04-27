@@ -42,7 +42,7 @@ $(document).ready(function(){
     console.log('starting...');
   }
   
-  $('#send').on('click', function(){
+  $('#send').on('click', async function(){
     if (DEBUG) console.log('send...');
 
         let fromaddress = $("#fromaddress").val();	
@@ -85,7 +85,7 @@ $(document).ready(function(){
 	
    })
   
-  $('#check').on('click', function(){
+  $('#check').on('click', async function(){
     if (DEBUG) console.log('check...'); 
     let fromaddress = $("#fromaddress").val();
     let getbalance = await web3.eth.getBalance(fromaddress);
@@ -95,7 +95,7 @@ $(document).ready(function(){
 	  
   })
 
-  $('#newAccount').on('click', function(){
+  $('#newAccount').on('click', async function(){
     let account = web3.eth.accounts.create();
 
     if (DEBUG) console.log("privateKey : ", account.privateKey);
